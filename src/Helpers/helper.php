@@ -28,6 +28,8 @@ if (!function_exists('triggerAsyncRequest')) {
         curl_setopt($channel, CURLOPT_TIMEOUT_MS, 5000);
         curl_setopt($channel, CURLOPT_SSL_VERIFYHOST, false);
         curl_setopt($channel, CURLOPT_SSL_VERIFYPEER, false);
+        curl_setopt($channel, CURLOPT_FOLLOWLOCATION, true);
+        curl_setopt($channel, CURLOPT_RETURNTRANSFER, true);
         curl_exec($channel);
         curl_close($channel);
     }
